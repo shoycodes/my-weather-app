@@ -105,10 +105,11 @@ h1 {
   color: rgb(20, 79, 59);
 }
 
-.small {
+small {
   text-align: center;
   color: white;
   font-family: "Montserrat", sans-serif;
   font-size: 10px;
-  position: relative;
+  display: block;
+  margin-bottom: 10px;
 }
