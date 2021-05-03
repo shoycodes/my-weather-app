@@ -104,3 +104,10 @@ h1 {
   font-family: "Courgette", cursive;
   color: rgb(20, 79, 59);
 }
+
+.footer {
+  align-items: center;
+  color: #646a61;
+  font-family: "Montserrat", sans-serif;
+  font-size: 10px;
+}
