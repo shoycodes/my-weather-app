@@ -11,13 +11,18 @@ let searchForm = document.querySelector(".search");
 searchForm.addEventListener("submit", searchPlace);
 
 function displayWeatherCondition(response) {
+   console.log(response.data);
   let cityElement = document.querySelector("#city-input");
   let description = document.querySelector("#temp-description");
   let temperature = Math.round(response.data.main.temp);
   let temperatureElement = document.querySelector("#degrees");
+  let humidityElement = document.querySelector("#humidity");
+  let windElement = document.querySelector("#wind");
   cityElement.innerHTML = response.data.name;
   temperatureElement.innerHTML = `${temperature}`;
   description.innerHTML = response.data.weather[0].description;
+  humidityElement.innerHTML = response.data.main.humidity;
+  windElement.innerHTML = Math.round(response.data.wind.speed);
 }
 
 function searchCity(city) {
