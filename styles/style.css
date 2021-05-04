@@ -75,6 +75,11 @@ li {
   margin-bottom: 2px;
 }
 
+#current-time {
+  color: #646a61;
+  font-size: 13px;
+}
+
 .temperature {
   display: block;
   margin: 12px;
