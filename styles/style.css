@@ -52,6 +52,9 @@ body {
   font-size: 20px;
   margin-bottom: 10px;
   font-family: "Courgette", cursive;
+}
+
+#temp-description::first-letter {
   text-transform: capitalize;
 }
 
