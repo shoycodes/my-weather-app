@@ -8,7 +8,7 @@ body {
   display: block;
   box-sizing: border-box;
   padding: 20px;
-  border-radius: 15px;
+  border-radius: 10px;
   border: 1px solid #cdd0cb;
   background-color: #d9e4dd;
   opacity: 90%;
@@ -60,13 +60,15 @@ ul {
 }
 
 li {
+  list-style: none;
+  margin: 0;
+  padding: 0;
   color: #646a61;
   font-size: 16px;
-  font-weight: 400;
+  font-weight: 500;
   font-family: "Montserrat", sans-serif;
-  height: 19px;
-  line-height: 1;
-  list-style: none;
+  line-height: 20px;
+  margin-bottom: 5px;
 }
 
 .temperature {
@@ -103,13 +105,13 @@ li {
 h1 {
   font-family: "Courgette", cursive;
   color: rgb(20, 79, 59);
+  margin-bottom: 0;
 }
 
 small {
   text-align: center;
   color: white;
   font-family: "Montserrat", sans-serif;
-  font-size: 10px;
+  font-size: 12px;
   display: block;
-  margin-bottom: 10px;
 }
