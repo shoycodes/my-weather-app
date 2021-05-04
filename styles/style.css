@@ -1,7 +1,7 @@
 body {
-  background-image: url(https://images.pexels.com/photos/1072179/pexels-photo-1072179.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260);
+  background-image: url(https://images.pexels.com/photos/2341830/pexels-photo-2341830.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260);
   background-repeat: no-repeat;
-  background-position: center;
+  background-position: inherit;
 }
 
 .app {
@@ -9,9 +9,9 @@ body {
   box-sizing: border-box;
   padding: 20px;
   border-radius: 10px;
-  border: 1px solid #cdd0cb;
-  background-color: #d9e4dd;
-  opacity: 90%;
+  border: 1px solid #eeeeee;
+  background-color: #eeeeee;
+  opacity: 95%;
   max-width: 800px;
   margin: 70px auto;
 }
@@ -40,6 +40,7 @@ body {
   font-size: 16px;
   padding: 10px;
   position: relative;
+  color: #646a61;
   font-weight: 700;
   line-height: 1;
   margin-left: 20px;
@@ -68,12 +69,12 @@ li {
   font-weight: 500;
   font-family: "Montserrat", sans-serif;
   line-height: 20px;
-  margin-bottom: 5px;
+  margin-bottom: 2px;
 }
 
 .temperature {
   display: block;
-  margin: 10px;
+  margin: 12px;
   font-size: 80px;
   line-height: 1;
   font-family: "Montserrat", sans-serif;
@@ -81,12 +82,11 @@ li {
 
 .units {
   text-decoration: none;
-  color: #646a61;
   position: relative;
   top: -90px;
   left: 100px;
   font-family: "Montserrat", sans-serif;
-  font-size: 14px;
+  font-size: 16px;
 }
 
 .float-left {
