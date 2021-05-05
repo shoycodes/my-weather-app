@@ -49,9 +49,7 @@ function getCurrentPosition(event) {
 let button = document.querySelector("button");
 button.addEventListener("click", getCurrentPosition);
 
-
 // Return current time
-
 let now = new Date();
 
 let day = now.getDay();
@@ -76,6 +74,44 @@ let days = [
 let currentDay = days[now.getDay()];
 let dateTime = document.querySelector("#date");
 dateTime.innerHTML = `${currentDay} ${hours}:${minutes}`;
+
+//change icon
+function changeIcon(response) {
+ 
+  let icon = document.querySelector("#imgWeather");
+  let iconName = response.data.weather[0].icon;
+  let weatherInput = response.data.weather[0].description;
+  let weatherInputMain = response.data.weather[0].main;
+  if (iconName === "01n") {
+    icon.setAttribute("src", "imgs/sun.png");
+  } else if (weatherInputMain === "Clear") {
+    icon.setAttribute("src", "imgs/sunnycloud.png");
+  } else if (iconName === "09n" || iconName === "10n") {
+    icon.setAttribute("src", "imgs/rain.png");
+  } else if (weatherInputMain === "Rain" || weatherInput === "shower rain") {
+    icon.setAttribute("src", "imgs/cloudsun.png");
+  } else if (weatherInput === "light rain") {
+    icon.setAttribute("src", "imgs/sunnycloud.png");
+  } else if (iconName === "02n" || iconName === "03n" || iconName === "04n") {
+    icon.setAttribute("src", "imgs/cloudsun.png");
+  } else if (
+    (weatherInputMain === "Clouds" && weatherInput === "few clouds") ||
+    weatherInput === "scattered clouds"
+  ) {
+    icon.setAttribute("src", "imgs/cloudy.png");
+  } else if (weatherInputMain === "Clouds") {
+    icon.setAttribute("src", "imgs/cloud.png");
+  } else if (weatherInputMain === "Snow") {
+    icon.setAttribute("src", "imgs/winter.png");
+  } else if (weatherInputMain === "Haze") {
+    icon.setAttribute("src", "imgs/cumulus.png");
+  } else if (weatherInputMain === "Thunderstorm") {
+    icon.setAttribute("src", "imgs/storm.png");
+  } else {
+    icon.setAttribute("src", "imgs/sun.png");
+  }
+}
+
 
 // Swap between C and F
 
