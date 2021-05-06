@@ -17,10 +17,14 @@ function displayWeatherCondition(response) {
   let temperatureElement = document.querySelector("#degrees");
   let humidityElement = document.querySelector("#humidity");
   let windElement = document.querySelector("#wind");
+  let celciusTemperatureReal = document.querySelector("#feels-like")
+
+  celsiusTemperature = response.data.main.temp;
 
   cityElement.innerHTML = response.data.name;
   temperatureElement.innerHTML = Math.round(response.data.main.temp);
   description.innerHTML = response.data.weather[0].description;
+  celciusTemperatureReal = Math.round(response.data.main.feels_like);
   humidityElement.innerHTML = response.data.main.humidity;
   windElement.innerHTML = Math.round(response.data.wind.speed);
 }
@@ -41,13 +45,13 @@ function showPosition(position) {
   axios.get(apiUrl).then(displayWeatherCondition);
 }
 
-function getCurrentPosition(event) {
-  event.preventDefault();
-  navigator.geolocation.getCurrentPosition(showPosition);
-}
+//function getCurrentPosition(event) {
+//  event.preventDefault();
+//  navigator.geolocation.getCurrentPosition(showPosition);
+//}
 
-let button = document.querySelector("button");
-button.addEventListener("click", getCurrentPosition);
+//let button = document.querySelector("button");
+//button.addEventListener("click", getCurrentPosition);
 
 // Return current time
 let now = new Date();
@@ -115,22 +119,32 @@ function changeIcon(response) {
 
 // Swap between C and F
 
-//function changeToFahrenheit(event) {
-//  event.preventDefault();
-//  let degrees = document.querySelector("#degrees");
-//  degrees.innerHTML = Math.round((degrees.innerHTML * 9) / 5 + 32);
-//}
+function showTempFahrenheit(event) {
+  event.preventDefault();
+let temperatureElement = document.querySelector("#degrees");
+//remove active class from celsius
+celsiusLink.classList.remove("active");
+fahrenheitLink.classList.add("active");
+let fahrenheitTemperature = (celsiusTemperature * 9) / 5 + 32;
+temperatureElement.innerHTML = Math.round(fahrenheitTemperature);
+}
 
-//let fahrenheitLink = document.querySelector("#fahrenheit");
-//fahrenheitLink.addEventListener("click", changeToFahrenheit);
+function showTempCelsius(event) {
+  event.preventDefault();
+  celsiusLink.classList.add("active");
+  fahrenheitLink.classList.remove("active");
+let temperatureElement = document.querySelector("#degrees");
+temperatureElement.innerHTML = Math.round(celsiusTemperature);
 
-//function convertToCelsius(event) {
-//  event.preventDefault();
-//  let temperatureElement = document.querySelector("#degrees");
-//  temperatureElement.innerHTML = Math.round(
-//    ((temperatureElement.innerHTML - 32) * 5) / 9
-//  );
-//}
+}
 
-//let celsiusLink = document.querySelector("#celsius");
-//celsiusLink.addEventListener("click", convertToCelsius);
+let celsiusTemperature = null;
+
+let fahrenheitLink = document.querySelector("#fahrenheit-link");
+fahrenheitLink.addEventListener("click", showTempFahrenheit);
+
+let celsiusLink = document.querySelector("#celsius-link");
+celsiusLink.addEventListener("click", showTempCelsius);
+
+searchCity("Amsterdam");
+

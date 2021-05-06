@@ -26,13 +26,7 @@
             <div class="input-group mb-3">
               <input type="text" class="form-control" placeholder="Enter a city, state" aria-label="Recipient's username"
                 aria-describedby="basic-addon2" autocomplete="off" />
-              <input type="submit" value="Search" class="btn btn-secondary btn-sm" id="basic-addon2" />
-            </div>
-
-            <div class="col-sm-6">
-              <button type="button" class="btn btn-outline-secondary">
-                <i class="fas fa-map-marker-alt"></i> Current Location
-              </button>
+            <button class="btn btn-secondary btn-sm" type="submit">Search</button>
             </div>
           </form>
         </div>
@@ -44,20 +38,26 @@
       </ul>
       <div class="row">
         <div class="col-md-6">
-          <div class="clearfix main-icon">
-            <img src="images/stratuscumulus.png" alt="image Weather" id="imgWeather" class="float-left icon" width="100px" />
+          <div class="clearfix weather-temperature">
+            <img src="images/stratuscumulus.png" alt="image Weather" id="imgWeather" class="float-left icon"/>
             <div class="float-left">
-              <span class="temperature" id="degrees">12</span>
-              <span class="units">°C | <a href="#" class="fahrenheit" id="fahrenheit">
-                  <strong>°F</strong>
-                </a>
-              </span>
+           
+          <strong class="temperature" id="degrees">12</strong>
+            <span class="units"><a href="#" id="celsius-link" class="active">°C</a> |
+            <a href="#" id="fahrenheit-link">°F</a>
+          </span>
+
             </div>
           </div>
         </div>
         <div class="col-md-6">
           <ul class="details">
             <li id="temp-description"></li>
+            <li>
+              Feels like:
+              <span id="feels-like"></span>
+              °
+            </li>
             <li>
               Humidity:
               <span id="humidity"></span>%
@@ -66,11 +66,6 @@
               Wind:
               <span id="wind"></span>
               mph
-            </li>
-            <li>
-              Chance of rain:
-              <span id="rain"></span>
-              %
             </li>
           </ul>
         </div>
