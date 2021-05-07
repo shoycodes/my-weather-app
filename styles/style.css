@@ -66,18 +66,29 @@ body {
 
 #fahrenheit-link {
   text-decoration: none;
-  color: #ffffff;
 }
+
 #celcius-link {
   text-decoration: none;
   color: #ffffff;
 }
+
 .active {
+  text-decoration: none;
   color: white;
   font-weight: bold;
   font-size: 26px;
-  text-decoration: none;
   cursor: default;
+}
+
+a {
+  text-decoration: none;
+  color: #6b6eb3;
+}
+
+a:hover {
+  text-decoration: none;
+  color: white;
 }
 
 #temp-description {
