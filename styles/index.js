@@ -17,30 +17,28 @@ function displayWeatherCondition(response) {
   let temperatureElement = document.querySelector("#degrees");
   let humidityElement = document.querySelector("#humidity");
   let windElement = document.querySelector("#wind");
-  let feelsLike = document.querySelector("#feels-like")
+  document.querySelector("#feels-like").innerHTML = Math.round(response.data.main.feels_like);
 
   celsiusTemperature = response.data.main.temp;
+  //celsiusFeelsLike = response.data.main.feels_like;
   cityElement.innerHTML = response.data.name;
   temperatureElement.innerHTML = Math.round(response.data.main.temp);
   description.innerHTML = response.data.weather[0].description;
-  feelsLike = Math.round(response.data.main.feels_like);
   humidityElement.innerHTML = response.data.main.humidity;
   windElement.innerHTML = Math.round(response.data.wind.speed);
 }
 
 function searchCity(city) {
-  let units = "metric";
   let apiKey = "318f9dfeb43dee4969a3fd201bd62795";
-  let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=${units}`;
+  let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`;
   axios.get(apiUrl).then(displayWeatherCondition);
 }
 
 function showPosition(position) {
   let lat = position.coords.latitude;
   let lon = position.coords.longitude;
-  let units = "metric";
   let apiKey = "318f9dfeb43dee4969a3fd201bd62795";
-  let apiUrl = `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&appid=${apiKey}&units=${units}`;
+  let apiUrl = `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&appid=${apiKey}&units=metric`;
   axios.get(apiUrl).then(displayWeatherCondition);
 }
 
@@ -90,7 +88,7 @@ function changeIcon(response) {
     icon.setAttribute("src", "images/sun.png");
   } else if (weatherInputMain === "Clear") {
     icon.setAttribute("src", "images/sunnycloud.png");
-  } else if (iconName === "09n" || iconName === "10n") {
+  } else if (iconName === "09n" || iconName === "10n" || iconName === "10d") {
     icon.setAttribute("src", "images/rain.png");
   } else if (weatherInputMain === "Rain" || weatherInput === "shower rain") {
     icon.setAttribute("src", "images/cloudsun.png");
@@ -126,10 +124,11 @@ celsiusLink.classList.remove("active");
 fahrenheitLink.classList.add("active");
 let fahrenheitTemperature = (celsiusTemperature * 9) / 5 + 32;
 temperatureElement.innerHTML = Math.round(fahrenheitTemperature);
+
+//let fahrenheitFeelsLike = (celsiusFeelsLike * 9) / 5 + 32;
+//fahrenheitFeelsLike = Math.round(fahrenheitFeelsLike);
 }
 
-//let fahrenheitTemperatureReal = (celciusTemperatureReal * 9) / 5 + 32;
-//fahrenheitTemperatureReal = Math.round(fahrenheitTemperatureReal);
 
 function showTempCelsius(event) {
   event.preventDefault();
@@ -137,11 +136,10 @@ function showTempCelsius(event) {
   fahrenheitLink.classList.remove("active");
 let temperatureElement = document.querySelector("#degrees");
 temperatureElement.innerHTML = Math.round(celsiusTemperature);
+
+//let celsiusFeelsLike = document.querySelector("feels-like");
+//celsiusFeelsLike.innerHTML = Math.round(celsiusFeelsLike);
 }
-
-
-//let celciusTemperatureReal = document.querySelector("feels-like");
-//celciusTemperatureReal.innerHTML = Math.round(celciusTemperatureReal);
 
 let celsiusTemperature = null;
 
