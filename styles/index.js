@@ -1,3 +1,29 @@
+// Return current time:
+let now = new Date();
+
+let day = now.getDay();
+let hours = now.getHours();
+if (hours < 10) {
+  hours = `0${hours}`;
+}
+let minutes = now.getMinutes();
+if (minutes < 10) {
+  minutes = `0${minutes}`;
+}
+let days = [
+  "Sunday",
+  "Monday",
+  "Tuesday",
+  "Wednesday",
+  "Thursday",
+  "Friday",
+  "Saturday"
+];
+
+let currentDay = days[now.getDay()];
+let dateTime = document.querySelector("#date");
+dateTime.innerHTML = `${currentDay} ${hours}:${minutes}`;
+
 // Search city, and weather conditions:
 function searchPlace(event) {
   event.preventDefault();
@@ -18,6 +44,9 @@ function displayWeatherCondition(response) {
   let humidityElement = document.querySelector("#humidity");
   let windElement = document.querySelector("#wind");
   document.querySelector("#feels-like").innerHTML = Math.round(response.data.main.feels_like);
+  //let iconElement = document.querySelector(".main-image");
+  //iconElement.setAttribute("src", `images/${response.data.weather[0].icon}.png`);
+
 
   celsiusTemperature = response.data.main.temp;
   //celsiusFeelsLike = response.data.main.feels_like;
@@ -50,70 +79,6 @@ function showPosition(position) {
 
 //let button = document.querySelector("button");
 //button.addEventListener("click", getCurrentPosition);
-
-// Return current time:
-let now = new Date();
-
-let day = now.getDay();
-let hours = now.getHours();
-if (hours < 10) {
-  hours = `0${hours}`;
-}
-let minutes = now.getMinutes();
-if (minutes < 10) {
-  minutes = `0${minutes}`;
-}
-let days = [
-  "Sunday",
-  "Monday",
-  "Tuesday",
-  "Wednesday",
-  "Thursday",
-  "Friday",
-  "Saturday"
-];
-
-let currentDay = days[now.getDay()];
-let dateTime = document.querySelector("#date");
-dateTime.innerHTML = `${currentDay} ${hours}:${minutes}`;
-
-//change icons:
-function changeIcon(response) {
- 
-  let icon = document.querySelector("#main-image");
-  let iconName = response.data.weather[0].icon;
-  let weatherInput = response.data.weather[0].description;
-  let weatherInputMain = response.data.weather[0].main;
-  if (iconName === "01n") {
-    icon.setAttribute("src", "images/sun.png");
-  } else if (weatherInputMain === "Clear") {
-    icon.setAttribute("src", "images/sunnycloud.png");
-  } else if (iconName === "09n" || iconName === "10n" || iconName === "10d") {
-    icon.setAttribute("src", "images/rain.png");
-  } else if (weatherInputMain === "Rain" || weatherInput === "shower rain") {
-    icon.setAttribute("src", "images/cloudsun.png");
-  } else if (weatherInput === "light rain") {
-    icon.setAttribute("src", "images/sunnycloud.png");
-  } else if (iconName === "02n" || iconName === "03n" || iconName === "04n") {
-    icon.setAttribute("src", "images/cloudsun.png");
-  } else if (
-    (weatherInputMain === "Clouds" && weatherInput === "few clouds") ||
-    weatherInput === "scattered clouds"
-  ) {
-    icon.setAttribute("src", "images/cloudy.png");
-  } else if (weatherInputMain === "Clouds") {
-    icon.setAttribute("src", "images/cloud.png");
-  } else if (weatherInputMain === "Snow") {
-    icon.setAttribute("src", "images/winter.png");
-  } else if (weatherInputMain === "Haze") {
-    icon.setAttribute("src", "images/cumulus.png");
-  } else if (weatherInputMain === "Thunderstorm") {
-    icon.setAttribute("src", "images/storm.png");
-  } else {
-    icon.setAttribute("src", "images/sun.png");
-  }
-}
-
 
 // Swap between C and F:
 function showTempFahrenheit(event) {
