@@ -47,6 +47,7 @@ function showPosition(position) {
 function displayWeatherCondition(response) {
    console.log(response.data);
   let cityElement = document.querySelector("#city-input");
+  let countryElement = document.querySelector("#city-input");
   let description = document.querySelector("#temp-description");
   let temperatureElement = document.querySelector("#degrees");
   let humidityElement = document.querySelector("#humidity");
@@ -57,6 +58,7 @@ function displayWeatherCondition(response) {
   celsiusTemperature = response.data.main.temp;
 
   cityElement.innerHTML = response.data.name;
+  countryElement.innerHTML = `${response.data.name}, ${response.data.sys.country}`;
   temperatureElement.innerHTML = Math.round(celsiusTemperature);
   description.innerHTML = response.data.weather[0].description;
   humidityElement.innerHTML = response.data.main.humidity;
