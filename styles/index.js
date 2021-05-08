@@ -36,6 +36,14 @@ function searchPlace(event) {
 let searchForm = document.querySelector(".search");
 searchForm.addEventListener("submit", searchPlace);
 
+function showPosition(position) {
+  let lat = position.coords.latitude;
+  let lon = position.coords.longitude;
+  let apiKey = "318f9dfeb43dee4969a3fd201bd62795";
+  let apiUrl = `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&appid=${apiKey}&units=metric`;
+  axios.get(apiUrl).then(displayWeatherCondition);
+}
+
 function displayWeatherCondition(response) {
    console.log(response.data);
   let cityElement = document.querySelector("#city-input");
@@ -43,31 +51,27 @@ function displayWeatherCondition(response) {
   let temperatureElement = document.querySelector("#degrees");
   let humidityElement = document.querySelector("#humidity");
   let windElement = document.querySelector("#wind");
+  let iconElement = document.querySelector("#main-image");
   document.querySelector("#feels-like").innerHTML = Math.round(response.data.main.feels_like);
-  //let iconElement = document.querySelector(".main-image");
-  //iconElement.setAttribute("src", `images/${response.data.weather[0].icon}.png`);
-
 
   celsiusTemperature = response.data.main.temp;
-  //celsiusFeelsLike = response.data.main.feels_like;
+
   cityElement.innerHTML = response.data.name;
-  temperatureElement.innerHTML = Math.round(response.data.main.temp);
+  temperatureElement.innerHTML = Math.round(celsiusTemperature);
   description.innerHTML = response.data.weather[0].description;
   humidityElement.innerHTML = response.data.main.humidity;
   windElement.innerHTML = Math.round(response.data.wind.speed);
+  iconElement.setAttribute("src",
+    `images/${response.data.weather[0].icon}.png`
+  );
+  iconElement.setAttribute("alt", response.data.weather[0].description);
+
+    showPosition(response.data.coord);
 }
 
 function searchCity(city) {
   let apiKey = "318f9dfeb43dee4969a3fd201bd62795";
   let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`;
-  axios.get(apiUrl).then(displayWeatherCondition);
-}
-
-function showPosition(position) {
-  let lat = position.coords.latitude;
-  let lon = position.coords.longitude;
-  let apiKey = "318f9dfeb43dee4969a3fd201bd62795";
-  let apiUrl = `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&appid=${apiKey}&units=metric`;
   axios.get(apiUrl).then(displayWeatherCondition);
 }
 
@@ -93,7 +97,6 @@ temperatureElement.innerHTML = Math.round(fahrenheitTemperature);
 //let fahrenheitFeelsLike = (celsiusFeelsLike * 9) / 5 + 32;
 //fahrenheitFeelsLike = Math.round(fahrenheitFeelsLike);
 }
-
 
 function showTempCelsius(event) {
   event.preventDefault();
