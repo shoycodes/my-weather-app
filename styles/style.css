@@ -2,6 +2,7 @@ body {
   background-image: url(https://images.pexels.com/photos/2341830/pexels-photo-2341830.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260);
   background-repeat: no-repeat;
   background-position: inherit;
+  font-family: "Montserrat", sans-serif;
 }
 
 .app {
@@ -12,13 +13,13 @@ body {
   background-image: linear-gradient(to top, #fff1eb 0%, #ace0f9 100%);
   border: 0.2px solid #a4c4d3;
   opacity: 95%;
-  max-width: 700px;
+  max-width: 750px;
   margin: 100px auto;
 }
 
 .row-forecast {
   border: 0.5px solid #e7f0fd;
-  background-image: linear-gradient(to top, #e6e9f0 0%, #eef1f5 100%);
+  background-image: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
   border-radius: 10px;
   margin: 0 auto;
   padding: 10px;
