@@ -9,16 +9,21 @@ body {
   box-sizing: border-box;
   padding: 20px;
   border-radius: 10px;
-  border: 0.5px solid #1e3c72;
-  background-image: linear-gradient(
-    to top,
-    #1e3c72 0%,
-    #1e3c72 1%,
-    #2a5298 100%
-  );
+  background-image: linear-gradient(to top, #fff1eb 0%, #ace0f9 100%);
+  border: 0.2px solid #a4c4d3;
   opacity: 95%;
-  max-width: 700px;
-  margin: 100px auto;
+  max-width: 800px;
+  margin: 70px auto;
+}
+
+.row-forecast {
+  border: 0.5px solid #e7f0fd;
+  background-image: linear-gradient(to top, #e6e9f0 0%, #eef1f5 100%);
+  border-radius: 10px;
+  margin: 0 auto;
+  padding: 10px;
+  font-family: "Comfortaa", cursive;
+  color: #373a40;
 }
 
 .container {
@@ -53,15 +58,15 @@ body {
   font-size: 80px;
   font-weight: 400;
   line-height: 1.25;
-  font-family: "Montserrat", sans-serif;
-  color: white;
+  font-family: "Comfortaa", cursive;
+  color: #0061a8;
   margin-left: 40px;
 }
 
 .weather-temperature .units {
   position: relative;
   font-size: 16px;
-  font-family: "Montserrat", sans-serif;
+  font-family: "Comfortaa", cursive;
   top: -45px;
 }
 
@@ -76,7 +81,7 @@ body {
 
 .active {
   text-decoration: none;
-  color: white;
+  color: #0061a8;
   font-weight: bold;
   font-size: 26px;
   cursor: default;
@@ -84,20 +89,20 @@ body {
 
 a {
   text-decoration: none;
-  color: #5e5e5e;
+  color: #686d76;
 }
 
 a:hover {
   text-decoration: none;
-  color: white;
+  color: #0061a8;
 }
 
 #temp-description {
-  color: whitesmoke;
+  color: #0061a8;
   font-weight: 200;
   font-size: 20px;
   margin-bottom: 10px;
-  font-family: "Courgette", cursive;
+  font-family: "Comfortaa", cursive;
 }
 
 #temp-description::first-letter {
@@ -113,7 +118,7 @@ li {
   list-style: none;
   margin: 0;
   padding: 0;
-  color: white;
+  color: #373a40;
   font-size: 16px;
   font-weight: 500;
   font-family: "Montserrat", sans-serif;
@@ -122,7 +127,7 @@ li {
 }
 
 #current-time {
-  color: white;
+  color: #373a40;
   font-size: 13px;
 }
 
@@ -130,29 +135,15 @@ li {
   float: left;
 }
 
-.row-forecast {
-  background-image: linear-gradient(
-    to top,
-    #1e3c72 0%,
-    #1e3c72 1%,
-    #2a5298 100%
-  );
-  border: 0.2px solid #2a5298;
-  border-radius: 10px;
-  margin: 0 auto;
-  padding: 10px;
-  font-family: "Montserrat", sans-serif;
-}
-
 h1 {
-  font-family: "Courgette", cursive;
-  color: whitesmoke;
+  font-family: "Comfortaa", cursive;
+  color: #0061a8;
   margin-bottom: 0;
 }
 
 small {
   text-align: center;
-  color: white;
+  color: #373a40;
   font-family: "Montserrat", sans-serif;
   font-size: 13px;
   display: block;

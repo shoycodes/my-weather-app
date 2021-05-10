@@ -10,6 +10,7 @@ let minutes = now.getMinutes();
 if (minutes < 10) {
   minutes = `0${minutes}`;
 }
+
 let days = [
   "Sunday",
   "Monday",
@@ -23,6 +24,25 @@ let days = [
 let currentDay = days[now.getDay()];
 let dateTime = document.querySelector("#date");
 dateTime.innerHTML = `${currentDay} ${hours}:${minutes}`;
+
+//background change:
+setInterval(change_background, 1000 * 60 * 2);
+
+function change_background(){
+let d = new Date();
+let n = d.getHours();
+console.log(n);
+if (n == 22 || n < 7) {
+  document.body.style.backgroundImage = "url(https://images.pexels.com/photos/2341830/pexels-photo-2341830.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260)";
+} else if (n == 7 || n <13) {
+  document.body.style.backgroundImage = "url(https://images.pexels.com/photos/531767/pexels-photo-531767.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260)";
+}
+else {
+  document.body.style.backgroundImage = "url(https://images.pexels.com/photos/1673973/pexels-photo-1673973.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260)";
+}
+}
+
+change_background();
 
 // Search city, and weather conditions:
 function searchPlace(event) {
