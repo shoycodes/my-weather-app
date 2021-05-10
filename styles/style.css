@@ -12,8 +12,8 @@ body {
   background-image: linear-gradient(to top, #fff1eb 0%, #ace0f9 100%);
   border: 0.2px solid #a4c4d3;
   opacity: 95%;
-  max-width: 800px;
-  margin: 70px auto;
+  max-width: 700px;
+  margin: 100px auto;
 }
 
 .row-forecast {
@@ -50,7 +50,6 @@ body {
 
 .weather-temperature img {
   margin-right: 5px;
-  margin-top: 5px;
   width: 100px;
 }
 
@@ -110,7 +109,6 @@ a:hover {
 }
 
 ul {
-  margin: 0;
   padding: 0;
 }
 
