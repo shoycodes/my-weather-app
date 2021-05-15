@@ -32,14 +32,14 @@ function change_background(){
 let d = new Date();
 let n = d.getHours();
 console.log(n);
-if (n == 22 || n < 7) {
-  document.body.style.backgroundImage = "url(https://images.pexels.com/photos/531767/pexels-photo-531767.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260)";
+if (n >= 22 || n < 7) {
+  document.body.style.backgroundImage = "url(https://images.pexels.com/photos/2341830/pexels-photo-2341830.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260)";
 } else 
 if (n == 7 || n <13) {
-  document.body.style.backgroundImage = "url(https://images.pexels.com/photos/1673973/pexels-photo-1673973.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260)";
+  document.body.style.backgroundImage = "url(https://images.pexels.com/photos/531767/pexels-photo-531767.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260)";
 }
 else {
-  document.body.style.backgroundImage = "url(https://images.pexels.com/photos/2341830/pexels-photo-2341830.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260)";
+  document.body.style.backgroundImage = "url(https://images.pexels.com/photos/1673973/pexels-photo-1673973.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260)";
 }
 }
 
