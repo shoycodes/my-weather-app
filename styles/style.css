@@ -29,12 +29,7 @@ body {
 
 .row-forecast {
   border: 0.5px solid #e7f0fd;
-  background-image: linear-gradient(
-    to top,
-    #f3e7e9 0%,
-    #e3eeff 99%,
-    #e3eeff 100%
-  );
+  background-image: linear-gradient(to top, #f3e7e9 0%, #e3eeff 99%, #e3eeff 100%);
   border-radius: 10px;
   margin: 0 auto;
   padding: 10px;
@@ -43,8 +38,15 @@ body {
 }
 
 .weather-forecast-date {
-  font-size: 20px;
-  font-weight: bolder;
+  font-size: 22px;
+  margin: 0 0 5px;
+  
+}
+
+.forecast-icon {
+  align-items: center;
+  padding-bottom: 5px;
+  margin: 0 0 5px;
 }
 
 .weather-forecast-temp-min {
@@ -55,12 +57,6 @@ body {
   position: relative;
   margin-left: 20px;
   text-align: center;
-  font-size: 16px;
-}
-
-.forecast-icon {
-  align-items: center;
-  padding-bottom: 5px;
 }
 
 .weather-temperature {
@@ -101,7 +97,7 @@ body {
   text-decoration: none;
   color: #0061a8;
   font-weight: bold;
-  font-size: 26px;
+  font-size: 24px;
   cursor: default;
 }
 
@@ -117,14 +113,21 @@ a:hover {
 
 #temp-description {
   color: #0061a8;
-  font-weight: 200;
+  font-weight: 600;
   font-size: 20px;
-  margin-bottom: 10px;
+  margin-bottom: 5px;
   font-family: "Comfortaa", cursive;
 }
 
 #temp-description::first-letter {
   text-transform: capitalize;
+}
+
+h1 {
+  font-size: 40px;
+  font-family: "Comfortaa", cursive;
+  color: #0061a8;
+  margin-bottom: 0;
 }
 
 ul {
@@ -137,15 +140,14 @@ li {
   padding: 0;
   color: #373a40;
   font-size: 16px;
-  font-weight: 500;
   font-family: "Montserrat", sans-serif;
-  line-height: 20px;
+  line-height: 22px;
   margin-bottom: 2px;
 }
 
 #current-time {
   color: #373a40;
-  font-size: 13px;
+  font-size: 14px;
   margin: 0;
 }
 
@@ -153,16 +155,11 @@ li {
   float: left;
 }
 
-h1 {
-  font-family: "Comfortaa", cursive;
-  color: #0061a8;
-  margin-bottom: 0;
-}
-
 small {
   text-align: center;
   color: #373a40;
   font-family: "Montserrat", sans-serif;
-  font-size: 13px;
+  font-size: 14px;
   display: block;
 }
+
