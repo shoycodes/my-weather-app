@@ -152,8 +152,17 @@ li {
 
 small {
   text-align: center;
-  color: #373a40;
+  color: #fbe0c4;
   font-family: "Montserrat", sans-serif;
   font-size: 14px;
   display: block;
+}
+
+#small {
+  color: #ffffff;
+}
+
+#small:hover {
+  text-decoration: none;
+  color: #fbe0c4;
 }
