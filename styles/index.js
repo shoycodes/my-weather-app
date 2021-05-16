@@ -39,7 +39,7 @@ if (n == 7 || n <13) {
   document.body.style.backgroundImage = "url(https://images.pexels.com/photos/531767/pexels-photo-531767.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260)";
 }
 else {
-  document.body.style.backgroundImage = "url(https://images.pexels.com/photos/1673973/pexels-photo-1673973.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260)";
+  document.body.style.backgroundImage = "url(https://images.unsplash.com/photo-1470687372616-d48d122e3b06?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1506&q=80)";
 }
 }
 
@@ -74,9 +74,9 @@ function displayForecast(response){
               <img src="images/${forecastDay.weather[0].icon}.png" alt="" width="50" />
             </div>
             <div class="forecast-temp">
-              <span class="weather-forecast-temp-max"> ${Math.round(
+              <strong class="weather-forecast-temp-max"> ${Math.round(
             forecastDay.temp.max
-          )} </span> |
+          )} </strong> |
           <span class="weather-forecast-temp-min"> ${Math.round(
             forecastDay.temp.min
           )} </span>
