@@ -160,9 +160,14 @@ small {
 
 #small {
   color: #ffffff;
+  padding-bottom: 10px;
 }
 
 #small:hover {
   text-decoration: none;
   color: #fbe0c4;
+}
+
+.forecast-temp {
+  padding-bottom: 5px;
 }
