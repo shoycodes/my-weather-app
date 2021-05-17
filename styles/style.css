@@ -1,6 +1,6 @@
 body {
   background-image: url(https://images.pexels.com/photos/2341830/pexels-photo-2341830.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260);
-  background-repeat: no-repeat;
+  background-repeat: inherit;
   background-position: inherit;
   font-family: "Montserrat", sans-serif;
 }
